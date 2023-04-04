@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form id="regsiter" method="post">
+
+    <input type="text" name="fname" placeholder="please enter your name" id="fname">
+    <span id="fnameErr"></span><br><br>
+    <input type="text" name="age" placeholder="please enter your age" id="age">
+    <span id="ageErr"></span ><br><br>
+    <input type="password" name="password" placeholder="please enter your password" id="password">
+    <span id="passwordErr"></span><br><br>
+
+    <input type="submit">
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#regsiter").submit(function(){
+            var formdata= $("#fname").val();
+            var regexfname = /^[a-zA-Z ]{2,30}$/;
+
+            if(formdata == ''){
+                $("#fnameErr").html("please enter first name");
+            }else{
+                if(regexfname.test(formdata)){
+                    $("#fnameErr").html("");
+                }else{
+                    $("#fnameErr").html("please enter valid name");
+                }
+            }
+
+
+            var agedata= $("#age").val();
+
+            // var regage = new RegExp('^[0-9]$');
+
+            if(agedata == ''){
+                $("#ageErr").html("please enter your age");
+            }else{
+                if(regagedata.test(agedata)){
+                    $("#ageErr").html("");
+                }else{
+                    $("#ageErr").html("please enter your valid age");
+                }
+                    // if(isNaN(agedata)){
+                    //     $("#ageErr").html("please enter your valid age");
+                    // }else{
+                    //     $("#ageErr").html("");
+                    // }
+            }
+
+
+            var password= $("#password").val();
+
+            if(password == ''){
+                $("#passwordErr").html("please enter password");
+            }else{
+                if(password
+                .length < 8){
+                    $("#passwordErr").html("plesae enter password 8 character");
+                }else{
+                    $("#passwordErr").html("");
+                }
+            }
+            
+            return false;
+        })
+    }); 
+</script>
+
+</body>
+</html>
