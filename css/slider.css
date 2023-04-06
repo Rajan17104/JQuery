@@ -6,6 +6,7 @@
 
 .owl-carousel{
     display: flex;
+    position: relative;
 }
 
 .item{
@@ -19,3 +20,20 @@
     object-position: center;
 }
 
+
+
+.fa-chevron-right:before{
+    position: absolute;
+    top: 33%;
+    right: 20px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.fa-chevron-left:before{
+    position: absolute;
+    top: 33%;
+    left: 20px;
+    font-size: 25px;
+    color: #fff;
+}
